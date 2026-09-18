@@ -218,6 +218,28 @@
 </div>
 
   <script>
+
+    function keepFullscreen() {
+  // Prüft, ob der Browser/die App aktuell NICHT im Vollbild ist
+  const isFullscreen = document.fullscreenElement || 
+                       document.webkitFullscreenElement || 
+                       document.msFullscreenElement;
+
+  if (!isFullscreen) {
+    const docEl = document.documentElement;
+    if (docEl.requestFullscreen) {
+      docEl.requestFullscreen().catch(() => {});
+    } else if (docEl.webkitRequestFullscreen) { /* Android WebView / Safari */
+      docEl.webkitRequestFullscreen().catch(() => {});
+    } else if (docEl.msRequestFullscreen) {
+      docEl.msRequestFullscreen().catch(() => {});
+    }
+  }
+}
+
+// Reagiert bei jedem Klick/Touch – geht sofort wieder in den Vollbildmodus, falls man raus ist
+window.addEventListener('pointerdown', keepFullscreen);
+    
     const canvas = document.getElementById('gameCanvas');
     const ctx = canvas.getContext('2d');
 

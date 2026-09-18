@@ -1,0 +1,16 @@
+{
+  "background_color": "#ffffff",
+  "dir": "auto",
+  "display": "fullscreen",
+  "name": "Space Monkey",
+  "orientation": "any",
+  "scope": "/",
+  "short_name": "Space Monkey",
+  "start_url": "https://voggel-games.github.io/Space-Monkey/",
+  "theme_color": "#ffffff",
+  "lang": "de",
+  "display_override": [
+    "fullscreen",
+    "window-controls-overlay"
+  ]
+}
